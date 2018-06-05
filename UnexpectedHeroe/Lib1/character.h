@@ -12,6 +12,9 @@ class Character {
 	public:
 		Character(std::string Name, int HP, int MP, sf::Sprite sprite);
 		virtual void getHit(int Damage) = 0;
-		virtual void onDeath() = 0;
-		virtual ~Character() = 0;
+		virtual void onDeath();
+		std::string getName();
+		int& getHP();
+		int& getMP();
+		//virtual ~Character() = 0;
 };

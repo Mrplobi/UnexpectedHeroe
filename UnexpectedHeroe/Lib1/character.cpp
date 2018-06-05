@@ -15,3 +15,18 @@ void Character::getHit(int Damage)
 void Character::onDeath()
 {
 }
+
+std::string Character::getName()
+{
+	return std::string(Name);
+}
+
+int& Character::getHP()
+{
+	return HP;
+}
+
+int& Character::getMP()
+{
+	return MP;
+}

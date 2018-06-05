@@ -6,14 +6,16 @@ class Bandana {
 	private:
 		std::string Name;
 		//image
-		int bonusDamage;
-		int bonusCost;
-		int bonusHP;
-		int bonusMP;
+		const int bonusDamage;
+		const int bonusCost;
+		const int bonusHP;
+		const int bonusMP;
 	public:
-		Bandana(std::string Name, int bonusDamage, int bonusCost, int bonusHP, int bonusMP, int bonusJump);
-		int getBonusDamage();
-		int getBonusCost();
-		int getBonusHP();
-		int getBonusMP();
+		Bandana();
+		Bandana(std::string Name, int bonusDamage, int bonusCost, int bonusHP, int bonusMP);
+		const int& getBonusDamage();
+		const int& getBonusCost();
+		const int& getBonusHP();
+		const int& getBonusMP();
+		const std::string& getName();
 };

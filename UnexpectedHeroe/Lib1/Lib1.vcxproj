@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="bandana.h" />
     <ClInclude Include="character.h" />
+    <ClInclude Include="classes.h" />
     <ClInclude Include="ennemy.h" />
     <ClInclude Include="heroe.h" />
     <ClInclude Include="spell.h" />
