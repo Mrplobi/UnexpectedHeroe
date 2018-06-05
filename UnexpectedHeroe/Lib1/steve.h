@@ -4,19 +4,16 @@
 #include "character.h"
 #include <vector>
 
-class steve : public Character{
+class Steve : public Character{
 	private :
 		Bandana* equipement;
-		std::vector<Spell> listOfSpellAvailable;
+		std::vector<Spell*> listOfSpellAvailable;
 		int numberOfJump;
-		int jumpHeight;
 	public :
+		Steve(Bandana* equipement, std::vector<Spell*> listOfSpellAvailable, int numberOfJump);
 		void getHit(int Damage);
-		void Jump();
-		void attack(Spell* spell);
+		void jump();
+		void attack(Character* target, Spell* spellUsed);
 		void newSpell(Spell* spell);
 		void equip(Bandana* bandana);
-		void setHP();
-		void setJump();
-		void setMP();
 };

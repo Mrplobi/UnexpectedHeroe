@@ -4,11 +4,15 @@
 class Steve;
 
 class Spell {
-public:
+private:
 	std::string Name;
 	int cost;
 	int damage;
-	int range;
-private:
-	void effect();
+	float range;
+public:
+	Spell(std::string Name, int cost, int damage, float range);
+	void graphic(); //affiche l'image de l'attaque
+	int getDamage();
+	float getRange();
+	int getCost();
 };

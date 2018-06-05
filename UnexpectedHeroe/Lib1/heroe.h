@@ -4,8 +4,11 @@
 
 class Heroe : public Character{
 private:
-	std::string textOnHit();
-	std::string textOnSpeak();
+	std::string textOnHit;
+	std::string textOnSpeak;
 public:
-	void getHit();
+	Heroe(std::string textOnHit, std::string textOnSpeak);
+	void getHit(int Damage);
+	void talkedTo();
+	void onDeath();
 };

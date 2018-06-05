@@ -1,12 +1,19 @@
 #pragma once
 #include <string>
-#include "steve.h"
 
+class Steve;
 class Bandana {
-	public:
+	private:
 		std::string Name;
 		//image
-	private:
-		void applyEffect();
-		void unApplyEffect();
+		int bonusDamage;
+		int bonusCost;
+		int bonusHP;
+		int bonusMP;
+	public:
+		Bandana(std::string Name, int bonusDamage, int bonusCost, int bonusHP, int bonusMP, int bonusJump);
+		int getBonusDamage();
+		int getBonusCost();
+		int getBonusHP();
+		int getBonusMP();
 };
