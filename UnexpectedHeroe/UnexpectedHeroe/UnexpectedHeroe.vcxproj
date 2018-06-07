@@ -159,6 +159,11 @@
     </ClCompile>
     <ClCompile Include="UnexpectedHeroe.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lib1\Lib1.vcxproj">
+      <Project>{cede1d0c-1240-4740-8974-355f89521f0b}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

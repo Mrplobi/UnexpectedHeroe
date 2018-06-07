@@ -11,9 +11,10 @@ private:
 	std::vector<Spell> listOfSpell;
 	std::vector<Bandana> listOfBandana;
 	std::vector<Ennemy*> listOfEnnemies;
+	Steve* steve;
 public:
 	GM();
-	void gameloop();
+	void gameLoop();
 	void processInput();
 	void updateAll();
 	void render();
