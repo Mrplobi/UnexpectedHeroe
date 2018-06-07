@@ -2,7 +2,8 @@
 #include "steve.h"
 #include <iostream>
 
-Steve::Steve(Bandana* equipement, std::vector<Spell*> listOfSpellAvailable, int numberOfJump, sf::Sprite sprite) : Character("Steve", 100, 50, sprite) {
+Steve::Steve(Bandana* equipement, std::vector<Spell*> listOfSpellAvailable, int numberOfJump, sf::Sprite sprite, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, b2World* theWorld) : 
+			Character("Steve", 100, 50, sprite, posx, posy, sizex, sizey, density, friction, restitution, theWorld) {
 	this->equipement = equipement;
 	this->listOfSpellAvailable = listOfSpellAvailable;
 	this->numberOfJump = numberOfJump;

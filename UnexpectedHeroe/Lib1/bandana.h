@@ -10,9 +10,10 @@ class Bandana {
 		const int bonusCost;
 		const int bonusHP;
 		const int bonusMP;
+		const int bonusJump;
 	public:
 		Bandana();
-		Bandana(std::string Name, int bonusDamage, int bonusCost, int bonusHP, int bonusMP);
+		Bandana(std::string Name, int bonusDamage, int bonusCost, int bonusHP, int bonusMP, int bonusJump);
 		const int& getBonusDamage();
 		const int& getBonusCost();
 		const int& getBonusHP();

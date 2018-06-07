@@ -151,6 +151,7 @@
     <ClInclude Include="character.h" />
     <ClInclude Include="classes.h" />
     <ClInclude Include="ennemy.h" />
+    <ClInclude Include="GM.h" />
     <ClInclude Include="heroe.h" />
     <ClInclude Include="spell.h" />
     <ClInclude Include="stdafx.h" />
