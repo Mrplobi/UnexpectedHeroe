@@ -5,3 +5,5 @@
 #include "spell.h"
 #include "villager.h"
 #include "steve.h"
+#include "allCommands.h"
+#include "inputHandler.h"

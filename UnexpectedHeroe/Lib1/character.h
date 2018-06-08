@@ -18,5 +18,6 @@ class Character {
 		std::string getName();
 		int& getHP();
 		int& getMP();
+		virtual void jump();
 		//virtual ~Character() = 0;
 };

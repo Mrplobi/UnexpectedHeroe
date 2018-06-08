@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Commands">
+      <UniqueIdentifier>{62bc5344-3a4d-43b1-b631-51811d54c2c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Stuff">
+      <UniqueIdentifier>{03d2c071-712b-4888-bb9d-2c4e0e2b42b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Perso">
+      <UniqueIdentifier>{25ff3d48-3099-4388-b503-84fd5f6b2e86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -21,32 +30,41 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="spell.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ennemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="villager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="steve.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="heroe.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bandana.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="character.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="classes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GM.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bandana.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="spell.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="character.h">
+      <Filter>Header Files\Perso</Filter>
+    </ClInclude>
+    <ClInclude Include="ennemy.h">
+      <Filter>Header Files\Perso</Filter>
+    </ClInclude>
+    <ClInclude Include="heroe.h">
+      <Filter>Header Files\Perso</Filter>
+    </ClInclude>
+    <ClInclude Include="steve.h">
+      <Filter>Header Files\Perso</Filter>
+    </ClInclude>
+    <ClInclude Include="villager.h">
+      <Filter>Header Files\Perso</Filter>
+    </ClInclude>
+    <ClInclude Include="myEnums.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="inputHandler.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="allCommands.h">
+      <Filter>Header Files\Commands</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +93,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="inputHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

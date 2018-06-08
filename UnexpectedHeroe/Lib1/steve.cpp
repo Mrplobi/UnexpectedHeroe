@@ -2,11 +2,11 @@
 #include "steve.h"
 #include <iostream>
 
-Steve::Steve(Bandana* equipement, std::vector<Spell*> listOfSpellAvailable, int numberOfJump, sf::Sprite sprite, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, b2World* theWorld) : 
+Steve::Steve(Bandana* equipement, std::vector<Spell*> listOfSpellAvailable, std::vector<Spell*> spellEquiped, int numberOfJump, sf::Sprite sprite, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, b2World* theWorld) :
 			Character("Steve", 100, 50, sprite, posx, posy, sizex, sizey, density, friction, restitution, theWorld) {
-	equipement = equipement;
-	listOfSpellAvailable = listOfSpellAvailable;
-	numberOfJump = numberOfJump;
+	this->equipement = equipement;
+	this->listOfSpellAvailable = listOfSpellAvailable;
+	this->numberOfJump = numberOfJump;
 	myBody->SetUserData(this);
 }
 
@@ -19,8 +19,12 @@ int Steve::getNumberOfJump()
 	return numberOfJump;
 }
 
-void Steve::attack(Character* target, Spell* spellUsed) {
-	target->getHit(spellUsed->getDamage() + equipement->getBonusDamage());
+void Steve::attack(Spell* spellUsed) { 
+	spellUsed->graphic();
+	MP -= (spellUsed->getCost() - equipement->getBonusCost());
+}
+
+void Steve::attack2(Spell* spellUsed) {
 	spellUsed->graphic();
 	MP -= (spellUsed->getCost() - equipement->getBonusCost());
 }

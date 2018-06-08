@@ -8,13 +8,15 @@ class Steve : public Character{
 	private :
 		Bandana* equipement;
 		std::vector<Spell*> listOfSpellAvailable;
+		std::vector<Spell*> spellEquiped;
 		int numberOfJump;
 	public :
-		Steve(Bandana* equipement, std::vector<Spell*> listOfSpellAvailable, int numberOfJump, sf::Sprite sprite, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, b2World* theWorld);
+		Steve(Bandana* equipement, std::vector<Spell*> listOfSpellAvailable, std::vector<Spell*> spellEquiped, int numberOfJump, sf::Sprite sprite, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, b2World* theWorld);
 		void getHit(int Damage);
 		void jump();
 		int getNumberOfJump();
-		void attack(Character* target, Spell* spellUsed);
+		void attack(Spell* spellUsed);
+		void attack2(Spell* SpellUsed);
 		void newSpell(Spell* spell);
 		Spell* getSpell(int indice);
 		std::vector<Spell*> getList();

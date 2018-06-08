@@ -12,11 +12,12 @@ private:
 	std::vector<Bandana> listOfBandana;
 	std::vector<Ennemy*> listOfEnnemies;
 	Steve* steve;
+	InputHandler handler;
 public:
 	GM();
 	void gameLoop();
 	void processInput();
-	void updateAll();
+	void update();
 	void render();
 	void worldChange(int levelNb);
 };
