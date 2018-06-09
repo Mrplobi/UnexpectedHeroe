@@ -1,11 +1,10 @@
 #include "stdafx.h"
 #include "spell.h"
 
-Spell::Spell(std::string Name, int cost, int damage, float range, bool forSteve) {
+Spell::Spell(std::string Name, int cost, int damage, bool forSteve) {
 	this->Name = Name;
 	this->cost = cost;
 	this->damage = damage;
-	this->range = range;
 	this->forSteve = forSteve;
 }
 
@@ -24,10 +23,6 @@ int Spell::getCost() {
 
 int Spell::getDamage() {
 	return this->damage;
-}
-
-float Spell::getRange() {
-	return this->range;
 }
 
 bool Spell::available() {

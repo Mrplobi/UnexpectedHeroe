@@ -7,3 +7,4 @@
 #include "steve.h"
 #include "allCommands.h"
 #include "inputHandler.h"
+#include "wall.h"

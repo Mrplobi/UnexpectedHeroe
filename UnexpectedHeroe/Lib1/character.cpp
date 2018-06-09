@@ -1,11 +1,9 @@
 #include "stdafx.h"
 #include "character.h"
 
-Character::Character(std::string Name, int HP, int MP, sf::Sprite sprite, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, b2World* theWorld){
-	this->Name = Name;
-	this->HP = HP;
-	this->MP = MP;
-	this->sprite = sprite;
+Character::Character(std::string Name, int HP, int MP, sf::Sprite sprite, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, b2World* theWorld) :
+			Name(Name), HP(HP), MP(MP), sprite(sprite){
+	
 	b2BodyDef myBodyDef;
 	myBodyDef.type = b2_dynamicBody;
 	myBodyDef.position.Set(posx, posy);

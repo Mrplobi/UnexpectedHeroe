@@ -28,6 +28,9 @@
     <Filter Include="Source Files\stuff">
       <UniqueIdentifier>{9a56e38a-4072-444b-a83d-6f461c59f2f6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\world">
+      <UniqueIdentifier>{ae2601ae-8cce-42cc-bbe5-b2dd99ab637d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -37,9 +40,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="classes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GM.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="bandana.h">
@@ -72,6 +72,12 @@
     <ClInclude Include="allCommands.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
+    <ClInclude Include="wall.h">
+      <Filter>Header Files\world</Filter>
+    </ClInclude>
+    <ClInclude Include="GM.h">
+      <Filter>Header Files\world</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -103,6 +109,9 @@
     </ClCompile>
     <ClCompile Include="bandana.cpp">
       <Filter>Source Files\stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="wall.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

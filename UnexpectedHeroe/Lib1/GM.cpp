@@ -3,7 +3,7 @@
 
 
 GM::GM() : DAWARUDO(b2Vec2(0, -1)) {
-	Spell spell1 = Spell("normalAtack", 0, 2, 2, true);	
+	Spell spell1 = Spell("normalAtack", 0, 2, true);	
 	listOfSpell.push_back(spell1);
 	sf::Texture texture;
 	texture.loadFromFile("../../Sprite/sprite_test");
@@ -13,8 +13,18 @@ GM::GM() : DAWARUDO(b2Vec2(0, -1)) {
 }
 
 void GM::gameLoop() {
-	sf::RenderWindow window(sf::VideoMode(1080, 720), "Unexpected Heroe");
-	while (1) {
+	sf::ContextSettings settings;
+	settings.antialiasingLevel = 8;
+	sf::RenderWindow window(sf::VideoMode(1080, 720), "Unexpected Heroe", sf::Style::Default, settings);
+	Wall wall1(0, 300, 700, 500, 0, 0, 0, sf::Color::Red, &DAWARUDO);
+	while (window.isOpen()) {
+		sf::Event event;
+		while (window.pollEvent(event)) {
+			if (event.type == sf::Event::Closed)
+				window.close();
+		}
+		wall1.draw(window);
+		window.display();
 		handler.pile();
-	}
+	}	
 }

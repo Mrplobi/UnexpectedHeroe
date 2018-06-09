@@ -59,12 +59,12 @@ void InputHandler::pile() {
 			commandPile.push_back(Button3->getAction());
 			std::cout << "atack2";
 		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
 			commandPile.push_back(AxisXp->getAction());
 			std::cout << "right";
 		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
 		{
 			commandPile.push_back(AxisXm->getAction());
 			std::cout << "left";

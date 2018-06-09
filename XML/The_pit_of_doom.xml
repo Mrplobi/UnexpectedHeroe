@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--Equipements and spell for UnexpectedHeroe -->
+
+<Da_Pit_of_DOOOOOOOM>
+	<SFML>
+		<Wall xtopL="0" ytopL="500" xbotR="1080" ybotR="700" floor="true" friction="0" restitution="0" >
+	</SFML>
+	
+	<Box2D>
+		
+	</Box2D>
+	
+	<SpookyScary>
+		
+	</SpookyScary>
+</Da_Pit_of_DOOOOOOOM>
