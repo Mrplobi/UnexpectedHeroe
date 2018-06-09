@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "bandana.h"
+#include <pugixml.hpp>
 
 Bandana::Bandana() : Name(""), bonusCost(0), bonusDamage(0), bonusHP(0), bonusMP(0), bonusJump(0){
 }

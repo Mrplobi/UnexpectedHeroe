@@ -3,7 +3,7 @@
 #include <iostream>
 
 Steve::Steve(Bandana* equipement, std::vector<Spell*> listOfSpellAvailable, std::vector<Spell*> spellEquiped, int numberOfJump, sf::Sprite sprite, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, b2World* theWorld) :
-			Character("Steve", 100, 50, sprite, posx, posy, sizex, sizey, density, friction, restitution, theWorld) {
+			Character("Steve", 5, 10, sprite, posx, posy, sizex, sizey, density, friction, restitution, theWorld) {
 	this->equipement = equipement;
 	this->listOfSpellAvailable = listOfSpellAvailable;
 	this->numberOfJump = numberOfJump;
@@ -11,7 +11,10 @@ Steve::Steve(Bandana* equipement, std::vector<Spell*> listOfSpellAvailable, std:
 }
 
 void Steve::jump() {
-
+	if (numberOfJump > 0) {
+		float impulse = myBody->GetMass() * 10;
+		myBody->ApplyLinearImpulse(b2Vec2(0, impulse), myBody->GetWorldCenter(), true);
+	}
 }
 
 int Steve::getNumberOfJump()

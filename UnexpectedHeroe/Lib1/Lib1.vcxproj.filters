@@ -22,6 +22,12 @@
     <Filter Include="Header Files\Perso">
       <UniqueIdentifier>{25ff3d48-3099-4388-b503-84fd5f6b2e86}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Perso">
+      <UniqueIdentifier>{a5d96f19-7439-46a8-9b1b-0e376b4ae45b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\stuff">
+      <UniqueIdentifier>{9a56e38a-4072-444b-a83d-6f461c59f2f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -71,32 +77,32 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="character.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ennemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="heroe.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="bandana.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="villager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="spell.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="steve.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GM.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="inputHandler.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="character.cpp">
+      <Filter>Source Files\Perso</Filter>
+    </ClCompile>
+    <ClCompile Include="ennemy.cpp">
+      <Filter>Source Files\Perso</Filter>
+    </ClCompile>
+    <ClCompile Include="heroe.cpp">
+      <Filter>Source Files\Perso</Filter>
+    </ClCompile>
+    <ClCompile Include="villager.cpp">
+      <Filter>Source Files\Perso</Filter>
+    </ClCompile>
+    <ClCompile Include="steve.cpp">
+      <Filter>Source Files\Perso</Filter>
+    </ClCompile>
+    <ClCompile Include="spell.cpp">
+      <Filter>Source Files\stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="bandana.cpp">
+      <Filter>Source Files\stuff</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

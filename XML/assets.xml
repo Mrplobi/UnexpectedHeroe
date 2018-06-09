@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--Equipements and spell for UnexpectedHeroe -->
+
+<GudShit>
+	<Bandanas>
+		<!-- sweet sweet masks -->
+		<Bandana Name="Bendana of De Ero!" bonusCost="0" bonusDamage="0" bonusHP="0" bonusMP="0" bonusJump="1">
+		<Bandana Name="Da Bendana to b stronk! But fwail..." bonusCost="0" bonusDamage="3" bonusHP="" bonusMP="0" bonusJump="1">
+		<Bandana Name="Bendana of de Vegan!" bonusCost="0" bonusDamage="-1" bonusHP="15" bonusMP="10" bonusJump="1">
+
+		
+		
+</GudShit>
