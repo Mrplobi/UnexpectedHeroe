@@ -2,8 +2,8 @@
 #include "heroe.h"
 #include <iostream>
 
-Heroe::Heroe(std::string textOnHit, std::string textOnSpeak, sf::Sprite sprite, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, b2World* theWorld) : 
-			Character("Lea", 10000, 1, sprite, posx, posy, sizex, sizey, density, friction, restitution, theWorld){
+Heroe::Heroe(std::string textOnHit, std::string textOnSpeak, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, sf::Color color, b2World& theWorld) : 
+			Character("Lea", 10000, 1, posx, posy, sizex, sizey, density, friction, restitution, color, theWorld){
 	textOnHit = textOnHit;
 	textOnSpeak = textOnSpeak;
 	myBody->SetUserData(this);

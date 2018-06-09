@@ -14,7 +14,6 @@ public:
 	void graphic(); //affiche l'image de l'attaque
 	std::string getName();
 	int getDamage();
-	float getRange();
 	int getCost();
 	bool available();
 };

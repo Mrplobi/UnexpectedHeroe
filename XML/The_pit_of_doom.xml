@@ -2,13 +2,11 @@
 <!--Equipements and spell for UnexpectedHeroe -->
 
 <Da_Pit_of_DOOOOOOOM>
-	<SFML>
+	<ElmundoKilébo>
 		<Wall xtopL="0" ytopL="500" xbotR="1080" ybotR="700" floor="true" friction="0" restitution="0" >
-	</SFML>
-	
-	<Box2D>
-		
-	</Box2D>
+		<Wall xtopL="0" ytopL="0" xbotR="300" ybotR="500" floor="false" friction="0" restitution="0" >
+		<Wall xtopL="1000" ytopL="0" xbotR="300" ybotR="500" floor="false" friction="0" restitution="0" >
+	</ElmundoKilébo>
 	
 	<SpookyScary>
 		

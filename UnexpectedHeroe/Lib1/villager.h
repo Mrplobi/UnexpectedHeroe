@@ -7,7 +7,7 @@ private:
 	std::string textOnHit;
 	std::string textOnSpeak;
 public:
-	Villager(std::string textOnHit, std::string textOnSpeak, std::string Name, sf::Sprite sprite, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, b2World* theWorld);
+	Villager(std::string textOnHit, std::string textOnSpeak, std::string Name, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, sf::Color color, b2World& theWorld);
 	void getHit(int Damage);
 	void talkedTo();
 };

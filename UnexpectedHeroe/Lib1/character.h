@@ -2,6 +2,7 @@
 #include <string>
 #include <SFML\Graphics.hpp>
 #include "Box2D\Box2D.h"
+#include <iostream>
 
 
 class Character {
@@ -9,15 +10,17 @@ class Character {
 		std::string Name;
 		int HP;
 		int MP;
-		sf::Sprite sprite;
 		b2Body* myBody;
+		sf::Color color;
+		sf::RectangleShape myShape;
 	public:
-		Character(std::string Name, int HP, int MP, sf::Sprite sprite, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, b2World* theWorld);
+		Character(std::string Name, int HP, int MP, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, sf::Color color, b2World& theWorld);
 		virtual void getHit(int Damage) = 0;
 		virtual void onDeath();
 		std::string getName();
 		int& getHP();
 		int& getMP();
 		virtual void jump();
+		void draw(sf::RenderWindow& window);
 		//virtual ~Character() = 0;
 };

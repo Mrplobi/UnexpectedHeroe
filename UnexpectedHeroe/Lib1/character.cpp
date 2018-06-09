@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "character.h"
 
-Character::Character(std::string Name, int HP, int MP, sf::Sprite sprite, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, b2World* theWorld) :
-			Name(Name), HP(HP), MP(MP), sprite(sprite){
-	
+Character::Character(std::string Name, int HP, int MP, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, sf::Color color, b2World& theWorld) :
+			Name(Name), HP(HP), MP(MP), color(color){
+
 	b2BodyDef myBodyDef;
 	myBodyDef.type = b2_dynamicBody;
 	myBodyDef.position.Set(posx, posy);
@@ -14,8 +14,17 @@ Character::Character(std::string Name, int HP, int MP, sf::Sprite sprite, float 
 	myFixtureDef.density = density;
 	myFixtureDef.friction = friction,
 	myFixtureDef.restitution = restitution;
-	myBody = theWorld->CreateBody(&myBodyDef);
+	myBody = theWorld.CreateBody(&myBodyDef);
 	myBody->CreateFixture(&myFixtureDef);
+	myShape = sf::RectangleShape(sf::Vector2f(sizex, sizey));
+	myShape.setPosition(posx, posy);
+	myShape.setFillColor(color);
+	myShape.setOutlineColor(sf::Color::Black);
+	myShape.setOutlineThickness(-1);
+}
+
+void Character::draw(sf::RenderWindow& window) {
+	window.draw(myShape);
 }
 
 void Character::getHit(int Damage)

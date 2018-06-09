@@ -16,6 +16,7 @@ Wall::Wall(float xtopL, float ytopL, float xbotR, float ybotR, bool floor, float
 	myShape = sf::RectangleShape(sf::Vector2f((XbotRight - XtopLeft), (YtopLetf - YbotRight)));
 	myShape.setPosition(XtopLeft, YtopLetf);
 	myShape.setFillColor(color);
+	myShape.setOutlineColor(sf::Color::Black);
 	myShape.setOutlineThickness(-1);
 };
 

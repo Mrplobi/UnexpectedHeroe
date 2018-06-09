@@ -2,13 +2,11 @@
 #include "GM.h"
 
 
-GM::GM() : DAWARUDO(b2Vec2(0, -1)) {
+GM::GM() : DAWARUDO(b2Vec2(0, -1)), steve(Steve(&Bandana(), std::vector<Spell*>({}), std::vector<Spell*>({}), 0, 540, 0, 1, 1, 1, (float)0.5, (float)0.1, sf::Color::Magenta, DAWARUDO)) {
 	Spell spell1 = Spell("normalAtack", 0, 2, true);	
 	listOfSpell.push_back(spell1);
-	sf::Texture texture;
-	texture.loadFromFile("../../Sprite/sprite_test");
-	sf::Sprite sprite(texture);
-	Steve steve = Steve(&Bandana(), std::vector<Spell*>({&spell1}), std::vector<Spell*>({ &spell1 }), 0, sprite, 0.f, 0.f, 1.f, 1.f, 1.f, (float)0.5, (float)0.1, &DAWARUDO);
+	steve.getListSpell().push_back(&spell1);
+	steve.getListSpell().push_back(&spell1);
 	InputHandler handler;
 }
 
@@ -23,8 +21,14 @@ void GM::gameLoop() {
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
-		wall1.draw(window);
+		window.clear(sf::Color::White);
+		//wall1.draw(window);
+		steve.draw(window);
 		window.display();
 		handler.pile();
 	}	
+}
+
+void GM::worldChange(int nb) {
+
 }

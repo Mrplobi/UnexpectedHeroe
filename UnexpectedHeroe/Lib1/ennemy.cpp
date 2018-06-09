@@ -2,8 +2,8 @@
 #include "ennemy.h"
 #include <iostream>
 
-Ennemy::Ennemy(Spell* attack, std::string Name, int HP, int MP, sf::Sprite sprite, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, b2World* theWorld) : 
-			Character(Name, HP, MP, sprite, posx, posy, sizex, sizey, density, friction, restitution, theWorld) {
+Ennemy::Ennemy(Spell* attack, std::string Name, int HP, int MP, sf::Sprite sprite, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, sf::Color color, b2World& theWorld) : 
+			Character(Name, HP, MP, posx, posy, sizex, sizey, density, friction, restitution, color, theWorld) {
 	if (attack->available() == false) {
 		this->attack = attack;
 	}

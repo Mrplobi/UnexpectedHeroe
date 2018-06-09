@@ -2,11 +2,11 @@
 #include "steve.h"
 #include <iostream>
 
-Steve::Steve(Bandana* equipement, std::vector<Spell*> listOfSpellAvailable, std::vector<Spell*> spellEquiped, int numberOfJump, sf::Sprite sprite, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, b2World* theWorld) :
-			Character("Steve", 5, 10, sprite, posx, posy, sizex, sizey, density, friction, restitution, theWorld) {
-	this->equipement = equipement;
-	this->listOfSpellAvailable = listOfSpellAvailable;
-	this->numberOfJump = numberOfJump;
+Steve::Steve(Bandana* equipement, std::vector<Spell*> listOfSpellAvailable, std::vector<Spell*> spellEquiped, int numberOfJump, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, sf::Color color, b2World& theWorld) :
+			Character("Steve", 5, 10, posx, posy, sizex, sizey, density, friction, restitution, color, theWorld), 
+			equipement(equipement), listOfSpellAvailable(listOfSpellAvailable),
+			maxNumberOfJump(numberOfJump),
+			numberOfJump(numberOfJump) {
 	myBody->SetUserData(this);
 }
 
@@ -47,7 +47,12 @@ Spell* Steve::getSpell(int indice)
 	return listOfSpellAvailable[indice];
 }
 
-std::vector<Spell*> Steve::getList()
+std::vector<Spell*> Steve::getListEquiped()
+{
+	return spellEquiped;
+}
+
+std::vector<Spell*> Steve::getListSpell()
 {
 	return listOfSpellAvailable;
 }

@@ -11,7 +11,8 @@ private:
 	std::vector<Spell> listOfSpell;
 	std::vector<Bandana> listOfBandana;
 	std::vector<Ennemy*> listOfEnnemies;
-	Steve* steve;
+	std::vector<Wall> Walls;
+	Steve steve;
 	InputHandler handler;
 public:
 	GM();

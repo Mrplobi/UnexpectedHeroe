@@ -2,8 +2,8 @@
 #include "villager.h"
 #include <iostream>
 
-Villager::Villager(std::string textOnHit, std::string textOnSpeak, std::string Name, sf::Sprite sprite, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, b2World* theWorld) : 
-			Character(Name, 1, 0, sprite, posx, posy, sizex, sizey, density, friction, restitution, theWorld) {
+Villager::Villager(std::string textOnHit, std::string textOnSpeak, std::string Name, float posx, float posy, float sizex, float sizey, float density, float friction, float restitution, sf::Color color, b2World& theWorld) :
+			Character(Name, 1, 0, posx, posy, sizex, sizey, density, friction, restitution, color, theWorld) {
 	textOnHit = textOnHit;
 	textOnSpeak = textOnSpeak;
 	myBody->SetUserData(this);
