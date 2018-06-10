@@ -31,6 +31,7 @@ public:
 	Actions getAction() {
 		return action;
 	}
+
 	Attack1Command()
 	{
 		this->action = SteveAttack1;
@@ -44,6 +45,7 @@ public:
 	Actions getAction() {
 		return action;
 	}
+
 	Attack2Command()
 	{
 		this->action = SteveAttack2;
@@ -57,6 +59,7 @@ public:
 	Actions getAction() {
 		return action;
 	}
+
 	MoveRight()
 	{
 		this->action = MovementRigth;
@@ -70,6 +73,7 @@ public:
 	Actions getAction() {
 		return action;
 	}
+
 	MoveLeft()
 	{
 		this->action = MovementLeft;

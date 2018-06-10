@@ -47,27 +47,26 @@ void InputHandler::pile() {
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 		{
 			commandPile.push_back(Button1->getAction());
-			std::cout << "jump";
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::K))
 		{
 			commandPile.push_back(Button2->getAction());
-			std::cout << "atack1";
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
 		{
 			commandPile.push_back(Button3->getAction());
-			std::cout << "atack2";
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
 			commandPile.push_back(AxisXp->getAction());
-			std::cout << "right";
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
 		{
 			commandPile.push_back(AxisXm->getAction());
-			std::cout << "left";
 		}
 	}
+}
+
+std::vector<Actions> InputHandler::getPile() {
+	return commandPile;
 }

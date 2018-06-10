@@ -22,14 +22,18 @@ int Steve::getNumberOfJump()
 	return numberOfJump;
 }
 
-void Steve::attack(Spell* spellUsed) { 
-	spellUsed->graphic();
-	MP -= (spellUsed->getCost() - equipement->getBonusCost());
+void Steve::attack() { 
+	spellEquiped[0]->graphic();
+	MP -= (spellEquiped[0]->getCost() - equipement->getBonusCost());
 }
 
-void Steve::attack2(Spell* spellUsed) {
-	spellUsed->graphic();
-	MP -= (spellUsed->getCost() - equipement->getBonusCost());
+void Steve::attack2() {
+	spellEquiped[1]->graphic();
+	MP -= (spellEquiped[1]->getCost() - equipement->getBonusCost());
+}
+
+void Steve::moveRight() {
+	myBody->SetLinearVelocity(b2Vec2(10, 0));
 }
 
 void Steve::getHit(int Damage) {
@@ -55,6 +59,10 @@ std::vector<Spell*> Steve::getListEquiped()
 std::vector<Spell*> Steve::getListSpell()
 {
 	return listOfSpellAvailable;
+}
+
+sf::RectangleShape Steve::getShape() {
+	return myShape;
 }
 
 Bandana * Steve::getEquipement()

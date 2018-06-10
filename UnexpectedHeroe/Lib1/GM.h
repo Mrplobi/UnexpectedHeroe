@@ -10,15 +10,17 @@ private:
 	b2World DAWARUDO;
 	std::vector<Spell> listOfSpell;
 	std::vector<Bandana> listOfBandana;
-	std::vector<Ennemy*> listOfEnnemies;
-	std::vector<Wall> Walls;
+	std::vector<Ennemy> listOfEnnemies;
+	std::vector<Wall> walls;
+	std::vector<Villager> people;
 	Steve steve;
 	InputHandler handler;
 public:
 	GM();
 	void gameLoop();
+	void pitOfDoom();
 	void processInput();
-	void update();
+	void updateGraph();
 	void render();
 	void worldChange(int levelNb);
 };

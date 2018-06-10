@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <pugixml.hpp>
 
 class Steve;
 class Bandana {
@@ -13,7 +14,8 @@ class Bandana {
 		const int bonusJump;
 	public:
 		Bandana();
-		Bandana(std::string Name, int bonusDamage, int bonusCost, int bonusHP, int bonusMP, int bonusJump);
+		//Bandana(std::string Name, int bonusDamage, int bonusCost, int bonusHP, int bonusMP, int bonusJump);
+		Bandana(pugi::xml_node &node);
 		const int& getBonusDamage();
 		const int& getBonusCost();
 		const int& getBonusHP();

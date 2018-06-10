@@ -14,5 +14,6 @@ private:
 public:
 	InputHandler();
 	void pile();
+	std::vector<Actions> getPile();
 	Actions unpile();
 };

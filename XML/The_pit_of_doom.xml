@@ -2,13 +2,23 @@
 <!--Equipements and spell for UnexpectedHeroe -->
 
 <Da_Pit_of_DOOOOOOOM>
-	<ElmundoKilébo>
-		<Wall xtopL="0" ytopL="500" xbotR="1080" ybotR="700" floor="true" friction="0" restitution="0" >
-		<Wall xtopL="0" ytopL="0" xbotR="300" ybotR="500" floor="false" friction="0" restitution="0" >
-		<Wall xtopL="1000" ytopL="0" xbotR="300" ybotR="500" floor="false" friction="0" restitution="0" >
-	</ElmundoKilébo>
+	<Elbegining>
+		<Steve posx="540" posy="360">
+	</Elbegining>
+	
+	<Elmundokilébo>
+		<Wall xtopL="0" ytopL="700" xbotR="1080" ybotR="720" floor="true" friction="0" restitution="0" >
+		<Wall xtopL="0" ytopL="0" xbotR="200" ybotR="500" floor="false" friction="0" restitution="0" >
+		<Wall xtopL="880" ytopL="0" xbotR="1080" ybotR="500" floor="false" friction="0" restitution="0" >
+	</Elmundokilébo>
 	
 	<SpookyScary>
-		
+		<Ennemy Spell="2" Name="Bouh" HP="6" MP="0" posx="1000" posy="550" sizex="10" sizey="10" density="1" friction="0" restitution="0">
 	</SpookyScary>
+	
+	<folks>
+		<Villager textOnHit="Comme dirait le grand Duke Nukem : *censored*"	textOnSpeak="eimmet m'I !!!yoH" Name="Toby"  posx="0"  posy="0"  sizex="0"  sizey="0"  density="0"  friction="0"  restitution="0" >
+		<Heroe textOnHit="WHYYYYYYYYYYYYY!?" textOnSpeak="Yo!" Name="Hercules"  posx="0"  posy="0"  sizex="0"  sizey="0"  density="0"  friction="0"  restitution="0" >
+	</folks>
+	
 </Da_Pit_of_DOOOOOOOM>
