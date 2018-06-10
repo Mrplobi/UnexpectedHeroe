@@ -25,5 +25,6 @@ class Character {
 		virtual void jump();
 		void draw(sf::RenderWindow& window);
 		b2Body* getBody();
+		sf::RectangleShape& getShape();
 		//virtual ~Character() = 0;
 };

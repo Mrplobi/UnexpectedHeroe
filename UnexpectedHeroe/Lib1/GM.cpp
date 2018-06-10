@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "GM.h"
+#include <iostream>
 
-
-GM::GM() : DAWARUDO(b2Vec2(0, -1)),	steve(Steve(&Bandana(), std::vector<Spell*>({}), std::vector<Spell*>({}), 0, 0, 0, 50, 50, 1, 0.5, 0.1, sf::Color::Magenta, DAWARUDO)) {
+GM::GM() : DAWARUDO(b2Vec2(0, 10)), steve(Steve(&Bandana(), std::vector<Spell*>({}), std::vector<Spell*>({}), 0, 500, 500, 50, 50, 1, 0.5, 0.1, sf::Color::Magenta, DAWARUDO)) {
 	InputHandler handler;
 }
 
@@ -22,8 +22,15 @@ void GM::gameLoop() {
 	for (auto& i : doc.child("GudShit").child("Spells").children()) {
 		listOfSpell.push_back(Spell(i));
 	}
+
+	sf::RenderWindow window(sf::VideoMode(1500, 900), "Unexpected Heroe");
+
 	pitOfDoom();
-	sf::RenderWindow window(sf::VideoMode(1080, 720), "Unexpected Heroe");
+
+	/*sf::View view2;
+	view2.setSize(sf::Vector2f(200, 200));
+	window.setView(view2);*/
+
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) {
@@ -32,11 +39,11 @@ void GM::gameLoop() {
 		}
 		processInput();
 		//Gestion des collision et background changes;
-		
-		window.clear();
-		steve.draw(window);
+		window.clear(sf::Color::White);
+		updateGraph(window);
+		//view2.setCenter(sf::Vector2f(steve.getBody()->GetPosition().x, steve.getBody()->GetPosition().y));
 		window.display();
-		handler.pile();
+		DAWARUDO.Step(1, 8, 3);
 	}	
 }
 
@@ -47,17 +54,17 @@ void GM::pitOfDoom() {
 		std::cout << "error parsing" << std::endl;
 		exit(EXIT_FAILURE);
 	}
-	for (auto& i : doc.child("Da_Pit_of_DOOOOOOOM").child("Elmundokilébo").children()) {
-		walls.push_back(Wall(i, DAWARUDO, sf::Color::Red));
+	for (auto& i : doc.child("Da_Pit_of_DOOOOOOOM").child("World").children()) {
+		walls.push_back(Wall(i, DAWARUDO));
 	}
 	for (auto& i : doc.child("Da_Pit_of_DOOOOOOOM").child("SpookyScary").children()) {
 		listOfEnnemies.push_back(Ennemy(i, DAWARUDO, &listOfSpell[2], sf::Color::Black));
 	}
 	for (auto& i : doc.child("Da_Pit_of_DOOOOOOOM").child("folks").children()) {
-		if (i.name() == "Villager") {
+		if (strcmp(i.name(),"Villager") == 0) {
 			people.push_back(Villager(i, DAWARUDO, sf::Color::Green));
 		}
-		else if (i.name() == "Heroe") {
+		else if (strcmp(i.name(),"Heroe") == 0 ) {
 			people.push_back(Heroe(i, DAWARUDO, sf::Color::Blue));
 		}
 	}
@@ -80,6 +87,31 @@ void GM::processInput() {
 	}
 }
 
+void GM::updateGraph(sf::RenderWindow &window) {
+
+	std::cout << steve.getBody()->GetPosition().y << std::endl;
+	std::cout << steve.getBody()->GetPosition().x << std::endl;
+	steve.getShape().setPosition(steve.getBody()->GetPosition().x, steve.getBody()->GetPosition().y);
+	steve.draw(window);
+	if (!(listOfEnnemies.size() == 0)) {
+		for (auto& i : listOfEnnemies) {
+			i.getShape().setPosition(i.getBody()->GetPosition().x, i.getBody()->GetPosition().y);
+			i.draw(window);
+		}
+	}
+	if (!people.size() == 0) {
+		for (auto& i : people) {
+			i.getShape().setPosition(i.getBody()->GetPosition().x, i.getBody()->GetPosition().y);
+			i.draw(window);
+		}
+	}
+	if (!walls.size() == 0) {
+		for (auto& i : walls) {
+			i.getShape().setPosition(i.getBody()->GetPosition().x, i.getBody()->GetPosition().y);
+			i.draw(window);
+		}
+	}
+}
 
 void GM::worldChange(int nb) {
 

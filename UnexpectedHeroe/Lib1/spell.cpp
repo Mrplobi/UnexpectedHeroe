@@ -8,7 +8,11 @@
 //	this->forSteve = forSteve;
 //}
 
-Spell::Spell(pugi::xml_node &node) : Name(node.attribute("Name").as_string()), cost(node.attribute("cost").as_int()), damage(node.attribute("damage").as_int()), forSteve(node.attribute("forSteve").as_bool()) {
+Spell::Spell(pugi::xml_node &node) : 
+	Name(node.attribute("Name").as_string()), 
+	cost(node.attribute("cost").as_int()), 
+	damage(node.attribute("damage").as_int()), 
+	forSteve(node.attribute("forSteve").as_bool()) {
 }
 
 void Spell::graphic()

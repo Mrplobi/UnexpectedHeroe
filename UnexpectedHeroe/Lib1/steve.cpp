@@ -36,6 +36,10 @@ void Steve::moveRight() {
 	myBody->SetLinearVelocity(b2Vec2(10, 0));
 }
 
+void Steve::moveLeft() {
+	myBody->SetLinearVelocity(b2Vec2(-10, 0));
+}
+
 void Steve::getHit(int Damage) {
 	HP -= Damage;
 }
@@ -59,10 +63,6 @@ std::vector<Spell*> Steve::getListEquiped()
 std::vector<Spell*> Steve::getListSpell()
 {
 	return listOfSpellAvailable;
-}
-
-sf::RectangleShape Steve::getShape() {
-	return myShape;
 }
 
 Bandana * Steve::getEquipement()

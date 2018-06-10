@@ -10,8 +10,8 @@
 //}
 
 Villager::Villager(pugi::xml_node &node, b2World& theWorld, sf::Color color ) : Character(node, theWorld, color),
-		textOnHit(node.attribute("TextHit").as_string()),
-		textOnSpeak(node.attribute("TextSpeak").as_string()){
+		textOnHit(node.attribute("textHit").as_string()),
+		textOnSpeak(node.attribute("textSpeak").as_string()){
 	myBody->SetUserData(this);
 }
 

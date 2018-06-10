@@ -6,13 +6,13 @@ Character::Character(std::string Name, int HP, int MP, float posx, float posy, f
 
 	b2BodyDef myBodyDef;
 	myBodyDef.type = b2_dynamicBody;
-	myBodyDef.position.Set(posx, posy);
+	myBodyDef.position.Set(posx + sizex / 2, posy + sizey / 2);
 	b2FixtureDef myFixtureDef;
 	b2PolygonShape boxShape;
-	boxShape.SetAsBox(sizex, sizey);
+	boxShape.SetAsBox(sizex/2, sizey/2);
 	myFixtureDef.shape = &boxShape;
 	myFixtureDef.density = density;
-	myFixtureDef.friction = friction,
+	myFixtureDef.friction = friction;
 	myFixtureDef.restitution = restitution;
 	myBody = theWorld.CreateBody(&myBodyDef);
 	myBody->CreateFixture(&myFixtureDef);
@@ -36,10 +36,10 @@ Character::Character(pugi::xml_node &node, b2World& theWorld, sf::Color color) :
 	float restitution = node.attribute("restitution").as_float();
 	b2BodyDef myBodyDef;
 	myBodyDef.type = b2_dynamicBody;
-	myBodyDef.position.Set(posx, posy);
+	myBodyDef.position.Set(posx + sizex/2, posy + sizey/2);
 	b2FixtureDef myFixtureDef;
 	b2PolygonShape boxShape;
-	boxShape.SetAsBox(sizex, sizey);
+	boxShape.SetAsBox(sizex/2, sizey/2);
 	myFixtureDef.shape = &boxShape;
 	myFixtureDef.density = density;
 	myFixtureDef.friction = friction,
@@ -83,6 +83,10 @@ int& Character::getMP()
 
 b2Body* Character::getBody() {
 	return myBody;
+}
+
+sf::RectangleShape& Character::getShape() {
+	return myShape;
 }
 
 void Character::jump()

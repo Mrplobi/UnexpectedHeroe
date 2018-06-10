@@ -20,7 +20,7 @@ public:
 	void gameLoop();
 	void pitOfDoom();
 	void processInput();
-	void updateGraph();
+	void updateGraph(sf::RenderWindow& window);
 	void render();
 	void worldChange(int levelNb);
 };

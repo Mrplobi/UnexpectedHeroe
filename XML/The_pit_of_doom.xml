@@ -2,23 +2,33 @@
 <!--Equipements and spell for UnexpectedHeroe -->
 
 <Da_Pit_of_DOOOOOOOM>
+
 	<Elbegining>
-		<Steve posx="540" posy="360">
+	
+		<Steve posx="540" posy="360"/>
+		
 	</Elbegining>
 	
-	<Elmundokilébo>
-		<Wall xtopL="0" ytopL="700" xbotR="1080" ybotR="720" floor="true" friction="0" restitution="0" >
-		<Wall xtopL="0" ytopL="0" xbotR="200" ybotR="500" floor="false" friction="0" restitution="0" >
-		<Wall xtopL="880" ytopL="0" xbotR="1080" ybotR="500" floor="false" friction="0" restitution="0" >
-	</Elmundokilébo>
+	<World>
+	
+		<Wall xtopL="0" ytopL="700" xbotR="1500" ybotR="720" floor="true" friction="0" restitution="0" />
+		<Wall xtopL="50" ytopL="50" xbotR="600" ybotR="500" floor="false" friction="0" restitution="0" />
+		<Wall xtopL="880" ytopL="0" xbotR="1000" ybotR="500" floor="false" friction="0" restitution="0" />
+		
+	</World>
 	
 	<SpookyScary>
-		<Ennemy Spell="2" Name="Bouh" HP="6" MP="0" posx="1000" posy="550" sizex="10" sizey="10" density="1" friction="0" restitution="0">
+	
+		<Ennemy Spell="2" Name="Bouh" HP="6" MP="0" posx="700" posy="360" sizex="50" sizey="50" density="1" friction="0" restitution="0"/>
+		
 	</SpookyScary>
 	
 	<folks>
-		<Villager textOnHit="Comme dirait le grand Duke Nukem : *censored*"	textOnSpeak="eimmet m'I !!!yoH" Name="Toby"  posx="0"  posy="0"  sizex="0"  sizey="0"  density="0"  friction="0"  restitution="0" >
-		<Heroe textOnHit="WHYYYYYYYYYYYYY!?" textOnSpeak="Yo!" Name="Hercules"  posx="0"  posy="0"  sizex="0"  sizey="0"  density="0"  friction="0"  restitution="0" >
+	
+		<Villager textHit="Comme dirait le grand Duke Nukem : *censored*" textSpeak="eimmet m'I !!!yoH" Name="Toby"  HP="1" MP="0" posx="500"  posy="20"  sizex="50"  sizey="50"  density="1"  friction="0"  restitution="0" />
+		<Villager textHit="Comme dirait le grand Duke Nukem : *censored*" textSpeak="eimmet m'I !!!yoH" Name="Toby"  HP="1" MP="0" posx="0"  posy="20"  sizex="50"  sizey="50"  density="1"  friction="0"  restitution="0" />
+		<!--<Heroe textHit="WHYYYYYYYYYYYYY!?" textSpeak="Yo!" Name="Hercules"  posx="400" HP="1" MP="0"  posy="200"  sizex="50"  sizey="50"  density="0"  friction="0"  restitution="0" />-->
+		
 	</folks>
 	
 </Da_Pit_of_DOOOOOOOM>

@@ -24,7 +24,6 @@ class Steve : public Character{
 		Spell* getSpell(int indice);
 		std::vector<Spell*> getListEquiped();
 		std::vector<Spell*> getListSpell();
-		sf::RectangleShape getShape();
 		Bandana* getEquipement();
 		void equip(Bandana* bandana);
 		void onDeath();
