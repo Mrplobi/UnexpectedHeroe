@@ -2,7 +2,7 @@
 #include "GM.h"
 #include <iostream>
 
-GM::GM() : DAWARUDO(b2Vec2(0, 10)), steve(Steve(&Bandana(), std::vector<Spell*>({}), std::vector<Spell*>({}), 0, 500, 500, 50, 50, 1, 0.5, 0.1, sf::Color::Magenta, DAWARUDO)) {
+GM::GM() : DAWARUDO(b2Vec2(0, 1)), steve(Steve(&Bandana(), std::vector<Spell*>({}), std::vector<Spell*>({}), 100000, 200, 100, 50, 50, 1, 0.5, 0.1, sf::Color::Magenta, DAWARUDO)) {
 	InputHandler handler;
 }
 
@@ -27,21 +27,23 @@ void GM::gameLoop() {
 
 	pitOfDoom();
 
-	/*sf::View view2;
-	view2.setSize(sf::Vector2f(200, 200));
-	window.setView(view2);*/
+	sf::View view2;
+	view2.setSize(sf::Vector2f(400, 400));
+	//window.setView(view2);
 
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) {
 			if (event.type == sf::Event::Closed)
-				window.close();
+				window.close();			
 		}
-		processInput();
+		handler.pile();
+		processInput(window, event);
 		//Gestion des collision et background changes;
 		window.clear(sf::Color::White);
 		updateGraph(window);
-		//view2.setCenter(sf::Vector2f(steve.getBody()->GetPosition().x, steve.getBody()->GetPosition().y));
+		view2.setCenter(sf::Vector2f(steve.getBody()->GetPosition().x, steve.getBody()->GetPosition().y));
+		window.setView(view2);
 		window.display();
 		DAWARUDO.Step(1, 8, 3);
 	}	
@@ -68,14 +70,15 @@ void GM::pitOfDoom() {
 			people.push_back(Heroe(i, DAWARUDO, sf::Color::Blue));
 		}
 	}
+	//steve.getBody()->GetPosition().Set();
 }
 
 
-void GM::processInput() {
-	handler.pile();
+void GM::processInput(sf::RenderWindow& window, sf::Event event) {
 	for (auto& i : handler.getPile()) {
-		if ( i == Jump )
+		if (i == Jump) {
 			steve.jump();
+		}
 		if (i == SteveAttack1)
 			steve.attack();
 		if (i == SteveAttack2)
@@ -84,30 +87,30 @@ void GM::processInput() {
 			steve.moveRight();
 		if (i == MovementLeft)
 			steve.moveLeft();
+		if (i == stopXMove)
+			steve.getBody()->SetLinearVelocity(b2Vec2(0, steve.getBody()->GetLinearVelocity().y));
 	}
+	handler.getPile().clear();
 }
 
 void GM::updateGraph(sf::RenderWindow &window) {
-
-	std::cout << steve.getBody()->GetPosition().y << std::endl;
-	std::cout << steve.getBody()->GetPosition().x << std::endl;
-	steve.getShape().setPosition(steve.getBody()->GetPosition().x, steve.getBody()->GetPosition().y);
+	steve.getShape().setPosition(steve.getBody()->GetPosition().x - steve.getShape().getSize().x/2, steve.getBody()->GetPosition().y - steve.getShape().getSize().y/2);
 	steve.draw(window);
 	if (!(listOfEnnemies.size() == 0)) {
 		for (auto& i : listOfEnnemies) {
-			i.getShape().setPosition(i.getBody()->GetPosition().x, i.getBody()->GetPosition().y);
+			i.getShape().setPosition(i.getBody()->GetPosition().x - i.getShape().getSize().x/2, i.getBody()->GetPosition().y - i.getShape().getSize().y/2);
 			i.draw(window);
 		}
 	}
 	if (!people.size() == 0) {
 		for (auto& i : people) {
-			i.getShape().setPosition(i.getBody()->GetPosition().x, i.getBody()->GetPosition().y);
+			i.getShape().setPosition(i.getBody()->GetPosition().x - i.getShape().getSize().x/2, i.getBody()->GetPosition().y - i.getShape().getSize().y/2);
 			i.draw(window);
 		}
 	}
 	if (!walls.size() == 0) {
 		for (auto& i : walls) {
-			i.getShape().setPosition(i.getBody()->GetPosition().x, i.getBody()->GetPosition().y);
+			i.getShape().setPosition(i.getBody()->GetPosition().x - i.getShape().getSize().x/2, i.getBody()->GetPosition().y - i.getShape().getSize().y/2);
 			i.draw(window);
 		}
 	}

@@ -6,7 +6,7 @@ Character::Character(std::string Name, int HP, int MP, float posx, float posy, f
 
 	b2BodyDef myBodyDef;
 	myBodyDef.type = b2_dynamicBody;
-	myBodyDef.position.Set(posx + sizex / 2, posy + sizey / 2);
+	myBodyDef.position.Set(posx + sizex, posy + sizey);
 	b2FixtureDef myFixtureDef;
 	b2PolygonShape boxShape;
 	boxShape.SetAsBox(sizex/2, sizey/2);
@@ -36,7 +36,7 @@ Character::Character(pugi::xml_node &node, b2World& theWorld, sf::Color color) :
 	float restitution = node.attribute("restitution").as_float();
 	b2BodyDef myBodyDef;
 	myBodyDef.type = b2_dynamicBody;
-	myBodyDef.position.Set(posx + sizex/2, posy + sizey/2);
+	myBodyDef.position.Set(posx + sizex, posy + sizey);
 	b2FixtureDef myFixtureDef;
 	b2PolygonShape boxShape;
 	boxShape.SetAsBox(sizex/2, sizey/2);

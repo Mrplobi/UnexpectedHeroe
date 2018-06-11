@@ -19,7 +19,7 @@ public:
 	GM();
 	void gameLoop();
 	void pitOfDoom();
-	void processInput();
+	void processInput(sf::RenderWindow& window, sf::Event event);
 	void updateGraph(sf::RenderWindow& window);
 	void render();
 	void worldChange(int levelNb);

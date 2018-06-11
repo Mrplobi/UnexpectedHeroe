@@ -30,16 +30,16 @@ Wall::Wall(pugi::xml_node &node, b2World& DAWARUDO) :
 		restitution(node.attribute("restitution").as_float()) {
 	b2BodyDef myBodyDef;
 	myBodyDef.type = b2_staticBody;
-	myBodyDef.position.Set(XtopLeft + (XbotRight - XtopLeft) / 2, YtopLetf + (YtopLetf - YbotRight) / 2);
+	myBodyDef.position.Set(XtopLeft + (XbotRight - XtopLeft) / 2, YtopLetf + (YbotRight - YtopLetf)/ 2);
 	b2FixtureDef myFixtureDef;
 	b2PolygonShape boxShape;
-	boxShape.SetAsBox(XbotRight - XtopLeft, YtopLetf - YbotRight);
+	boxShape.SetAsBox((XbotRight - XtopLeft)/2, (YbotRight - YtopLetf)/2);
 	myFixtureDef.shape = &boxShape;
 	myFixtureDef.friction = friction,
 	myFixtureDef.restitution = restitution;
 	myBody = DAWARUDO.CreateBody(&myBodyDef);
 	myBody->CreateFixture(&myFixtureDef);
-	myShape = sf::RectangleShape(sf::Vector2f((XbotRight - XtopLeft), (YtopLetf - YbotRight)));
+	myShape = sf::RectangleShape(sf::Vector2f((XbotRight - XtopLeft), (YbotRight - YtopLetf)));
 	myShape.setPosition(XtopLeft, YtopLetf);
 	myShape.setFillColor(sf::Color::Red);
 	myShape.setOutlineColor(sf::Color::Black);

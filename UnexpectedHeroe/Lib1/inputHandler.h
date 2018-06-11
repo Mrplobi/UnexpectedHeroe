@@ -11,9 +11,9 @@ private:
 	std::unique_ptr<Command> Button3;
 	std::unique_ptr<Command> AxisXp;
 	std::unique_ptr<Command> AxisXm;
+	bool pressed;
 public:
 	InputHandler();
 	void pile();
-	std::vector<Actions> getPile();
-	Actions unpile();
+	std::vector<Actions>& getPile();
 };

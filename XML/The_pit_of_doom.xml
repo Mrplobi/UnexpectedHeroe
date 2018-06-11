@@ -12,13 +12,14 @@
 	<World>
 	
 		<Wall xtopL="0" ytopL="700" xbotR="1500" ybotR="720" floor="true" friction="0" restitution="0" />
-		<Wall xtopL="50" ytopL="50" xbotR="600" ybotR="500" floor="false" friction="0" restitution="0" />
+		<Wall xtopL="150" ytopL="150" xbotR="600" ybotR="500" floor="false" friction="0" restitution="0" />
 		<Wall xtopL="880" ytopL="0" xbotR="1000" ybotR="500" floor="false" friction="0" restitution="0" />
 		
 	</World>
 	
 	<SpookyScary>
 	
+		<Ennemy Spell="2" Name="Bouh" HP="6" MP="0" posx="700" posy="360" sizex="50" sizey="50" density="1" friction="0" restitution="0"/>
 		<Ennemy Spell="2" Name="Bouh" HP="6" MP="0" posx="700" posy="360" sizex="50" sizey="50" density="1" friction="0" restitution="0"/>
 		
 	</SpookyScary>

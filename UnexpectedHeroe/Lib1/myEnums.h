@@ -8,4 +8,5 @@ enum Actions
 	SteveAttack2,
 	MovementRigth,
 	MovementLeft,
+	stopXMove
 };

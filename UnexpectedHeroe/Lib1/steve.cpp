@@ -12,9 +12,12 @@ Steve::Steve(Bandana* equipement, std::vector<Spell*> listOfSpellAvailable, std:
 
 void Steve::jump() {
 	if (numberOfJump > 0) {
-		float impulse = myBody->GetMass() * 10;
-		myBody->ApplyLinearImpulse(b2Vec2(0, impulse), myBody->GetWorldCenter(), true);
+
+		float impulse = myBody->GetMass() * 1000000;
+		myBody->ApplyLinearImpulseToCenter(b2Vec2(myBody->GetLinearVelocity().x, -impulse), true);
+		//std::cout << "jump2";
 	}
+	numberOfJump--;
 }
 
 int Steve::getNumberOfJump()
@@ -33,11 +36,11 @@ void Steve::attack2() {
 }
 
 void Steve::moveRight() {
-	myBody->SetLinearVelocity(b2Vec2(10, 0));
+	myBody->SetLinearVelocity(b2Vec2(10, myBody->GetLinearVelocity().y));
 }
 
 void Steve::moveLeft() {
-	myBody->SetLinearVelocity(b2Vec2(-10, 0));
+	myBody->SetLinearVelocity(b2Vec2(-10, myBody->GetLinearVelocity().y));
 }
 
 void Steve::getHit(int Damage) {
