@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Villager" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAIIAAAEAEAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>villager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Command" Collapsed="true">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>allCommands.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JumpCommand" Collapsed="true">
+    <Position X="6" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAQAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>allCommands.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Attack1Command" Collapsed="true">
+    <Position X="10.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>allCommands.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Attack2Command" Collapsed="true">
+    <Position X="9" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAQAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>allCommands.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoveRight" Collapsed="true">
+    <Position X="7.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>allCommands.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoveLeft" Collapsed="true">
+    <Position X="12.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>allCommands.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputHandler" Collapsed="true">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAACAAAAQAAAAADgQAAAAAAEAAAAAAAABAAA=</HashCode>
+      <FileName>inputHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Character" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAEAAASAAAAAAIAAAQAQgCAAACAAAAEAEYACAA=</HashCode>
+      <FileName>character.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ennemy" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAgAAAAAAgAAAAAAAAAAAACAAACAAAAAAAACAAA=</HashCode>
+      <FileName>ennemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heroe" Collapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAEAAAAAAAAAAAAACAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>heroe.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Steve" Collapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIICAAAAAAAAAAgAAAgAAQAIQgCAAACIAAIAOEECAAA=</HashCode>
+      <FileName>steve.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bandana" Collapsed="true">
+    <Position X="7.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAACAIAAIAAAQCAAAACAAAAAAEAAAAAog=</HashCode>
+      <FileName>bandana.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spell" Collapsed="true">
+    <Position X="7.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAICAEAEAAAgAAAAEAAAAQAAAAQAIAAAAAEAAAAAAA=</HashCode>
+      <FileName>spell.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GM" Collapsed="true">
+    <Position X="7.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAgAgAAAAAAAAASAICEgAAAIAAAQAIAAAAAABIA=</HashCode>
+      <FileName>GM.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wall" Collapsed="true">
+    <Position X="7.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAEAIASAAAAAAIAAACAAQEAAASAAwAAAAQAAAA=</HashCode>
+      <FileName>wall.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Actions" Collapsed="true">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAABAAAgAAAAAAAAAAAAAAAgBAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>myEnums.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

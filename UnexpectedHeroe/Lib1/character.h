@@ -19,7 +19,7 @@ class Character {
 		Character(pugi::xml_node &node, b2World& theWorld, sf::Color color);
 		virtual void getHit(int Damage) = 0;
 		virtual void onDeath();
-		std::string getName();
+		std::string& getName();
 		int& getHP();
 		int& getMP();
 		virtual void jump();

@@ -66,9 +66,9 @@ void Character::onDeath()
 {
 }
 
-std::string Character::getName()
+std::string& Character::getName()
 {
-	return std::string(Name);
+	return Name;
 }
 
 int& Character::getHP()

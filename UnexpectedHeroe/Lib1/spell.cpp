@@ -19,9 +19,9 @@ void Spell::graphic()
 {
 }
 
-std::string Spell::getName()
+std::string& Spell::getName()
 {
-	return std::string(Name);
+	return Name;
 }
 
 int Spell::getCost() {

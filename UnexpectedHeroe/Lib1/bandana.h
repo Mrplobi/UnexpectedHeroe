@@ -20,5 +20,6 @@ class Bandana {
 		const int& getBonusCost();
 		const int& getBonusHP();
 		const int& getBonusMP();
+		const int& getBonusJump();
 		const std::string& getName();
 };

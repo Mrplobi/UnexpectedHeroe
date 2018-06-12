@@ -12,7 +12,6 @@ Steve::Steve(Bandana* equipement, std::vector<Spell*> listOfSpellAvailable, std:
 
 void Steve::jump() {
 	if (numberOfJump > 0) {
-
 		float impulse = myBody->GetMass() * 50;
 		myBody->ApplyLinearImpulseToCenter(b2Vec2(myBody->GetLinearVelocity().x, -impulse), true);
 		//std::cout << "jump2";
@@ -58,12 +57,12 @@ Spell* Steve::getSpell(int indice)
 	return listOfSpellAvailable[indice];
 }
 
-std::vector<Spell*> Steve::getListEquiped()
+std::vector<Spell*>& Steve::getListEquiped()
 {
 	return spellEquiped;
 }
 
-std::vector<Spell*> Steve::getListSpell()
+std::vector<Spell*>& Steve::getListSpell()
 {
 	return listOfSpellAvailable;
 }

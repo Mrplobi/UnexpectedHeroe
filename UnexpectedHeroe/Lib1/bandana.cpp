@@ -38,6 +38,11 @@ const int& Bandana::getBonusMP()
 	return bonusMP;
 }
 
+const int& Bandana::getBonusJump()
+{
+	return bonusJump;
+}
+
 const std::string& Bandana::getName() {
 	return Name;
 }

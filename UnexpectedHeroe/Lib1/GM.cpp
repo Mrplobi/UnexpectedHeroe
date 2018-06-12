@@ -2,7 +2,7 @@
 #include "GM.h"
 #include <iostream>
 
-GM::GM() : DAWARUDO(b2Vec2(0, 10)), steve(Steve(&Bandana(), std::vector<Spell*>({}), std::vector<Spell*>({}), 1, 200, 100, 50, 50, 1, 0.5, 0.1, sf::Color::Magenta, DAWARUDO)) {
+GM::GM() : DAWARUDO(b2Vec2(0, 10)), steve(Steve(&Bandana(), std::vector<Spell*>({}), std::vector<Spell*>({}), 10, 200, 100, 50, 50, 1, 0.5, 0.1, sf::Color::Magenta, DAWARUDO)) {
 	InputHandler handler;
 }
 
@@ -22,14 +22,16 @@ void GM::gameLoop() {
 	for (auto& i : doc.child("GudShit").child("Spells").children()) {
 		listOfSpell.push_back(Spell(i));
 	}
-
+	steve.getListSpell().push_back(&listOfSpell[0]);
+	steve.getListSpell().push_back(&listOfSpell[1]);
+	steve.getListEquiped().push_back(&listOfSpell[0]);
+	steve.getListEquiped().push_back(&listOfSpell[1]);
 	sf::RenderWindow window(sf::VideoMode(1500, 900), "Unexpected Heroe");
 
 	pitOfDoom();
 
 	sf::View view;
 	view.setSize(sf::Vector2f(700, 700));
-	//window.setView(view2);
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -39,7 +41,7 @@ void GM::gameLoop() {
 		}
 		handler.pile();
 		processInput(window, event);
-		//Gestion des collision et background changes;
+		//Gestion des collision et background changes (NO TIME FOR THAT);
 		window.clear(sf::Color::White);
 		updateGraph(window, view);
 		view.setCenter(sf::Vector2f(steve.getBody()->GetPosition().x, steve.getBody()->GetPosition().y));
@@ -60,17 +62,16 @@ void GM::pitOfDoom() {
 		walls.push_back(Wall(i, DAWARUDO));
 	}
 	for (auto& i : doc.child("Da_Pit_of_DOOOOOOOM").child("SpookyScary").children()) {
-		listOfEnnemies.push_back(Ennemy(i, DAWARUDO, &listOfSpell[2], sf::Color::Black));
+		listOfEnnemies.push_back(Ennemy(i, DAWARUDO, &listOfSpell[i.attribute("Spell").as_int()], sf::Color::Black));
 	}
 	for (auto& i : doc.child("Da_Pit_of_DOOOOOOOM").child("folks").children()) {
 		if (strcmp(i.name(),"Villager") == 0) {
-			people.push_back(Villager(i, DAWARUDO, sf::Color::Green));
+			people.push_back(Villager(i, DAWARUDO, sf::Color::Yellow));
 		}
 		else if (strcmp(i.name(),"Heroe") == 0 ) {
 			people.push_back(Heroe(i, DAWARUDO, sf::Color::Blue));
 		}
 	}
-	//steve.getBody()->GetPosition().Set();
 }
 
 
@@ -114,11 +115,21 @@ void GM::updateGraph(sf::RenderWindow &window, sf::View view) {
 			i.draw(window);
 		}
 	}
+
+	//displayHP
 	for (int i = 1; i <= steve.getHP(); i++) {
 		sf::RectangleShape rect(sf::Vector2f(10.f, 20.f));
 		rect.setPosition(steve.getBody()->GetPosition().x - view.getSize().x/2 + 20*i, steve.getBody()->GetPosition().y - view.getSize().y/2 + 20);
-		rect.setFillColor(sf::Color::Cyan);
+		rect.setFillColor(sf::Color::Green);
 		rect.setOutlineThickness(-1);
+		window.draw(rect);
+	}
+
+	//displayMP
+	for (int i = 1; i <= steve.getMP(); i++) {
+		sf::RectangleShape rect(sf::Vector2f(10.f, 20.f));
+		rect.setPosition(steve.getBody()->GetPosition().x + view.getSize().x / 2 - 20 - i*10, steve.getBody()->GetPosition().y - view.getSize().y / 2 + 20);
+		rect.setFillColor(sf::Color::Cyan);
 		window.draw(rect);
 	}
 }
