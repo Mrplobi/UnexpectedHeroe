@@ -2,7 +2,7 @@
 #include "GM.h"
 #include <iostream>
 
-GM::GM() : DAWARUDO(b2Vec2(0, 1)), steve(Steve(&Bandana(), std::vector<Spell*>({}), std::vector<Spell*>({}), 100000, 200, 100, 50, 50, 1, 0.5, 0.1, sf::Color::Magenta, DAWARUDO)) {
+GM::GM() : DAWARUDO(b2Vec2(0, 10)), steve(Steve(&Bandana(), std::vector<Spell*>({}), std::vector<Spell*>({}), 1, 200, 100, 50, 50, 1, 0.5, 0.1, sf::Color::Magenta, DAWARUDO)) {
 	InputHandler handler;
 }
 
@@ -27,8 +27,8 @@ void GM::gameLoop() {
 
 	pitOfDoom();
 
-	sf::View view2;
-	view2.setSize(sf::Vector2f(400, 400));
+	sf::View view;
+	view.setSize(sf::Vector2f(700, 700));
 	//window.setView(view2);
 
 	while (window.isOpen()) {
@@ -41,11 +41,11 @@ void GM::gameLoop() {
 		processInput(window, event);
 		//Gestion des collision et background changes;
 		window.clear(sf::Color::White);
-		updateGraph(window);
-		view2.setCenter(sf::Vector2f(steve.getBody()->GetPosition().x, steve.getBody()->GetPosition().y));
-		window.setView(view2);
+		updateGraph(window, view);
+		view.setCenter(sf::Vector2f(steve.getBody()->GetPosition().x, steve.getBody()->GetPosition().y));
+		window.setView(view);
 		window.display();
-		DAWARUDO.Step(1, 8, 3);
+		DAWARUDO.Step(1/30.f, 8, 3);
 	}	
 }
 
@@ -93,7 +93,7 @@ void GM::processInput(sf::RenderWindow& window, sf::Event event) {
 	handler.getPile().clear();
 }
 
-void GM::updateGraph(sf::RenderWindow &window) {
+void GM::updateGraph(sf::RenderWindow &window, sf::View view) {
 	steve.getShape().setPosition(steve.getBody()->GetPosition().x - steve.getShape().getSize().x/2, steve.getBody()->GetPosition().y - steve.getShape().getSize().y/2);
 	steve.draw(window);
 	if (!(listOfEnnemies.size() == 0)) {
@@ -113,6 +113,13 @@ void GM::updateGraph(sf::RenderWindow &window) {
 			i.getShape().setPosition(i.getBody()->GetPosition().x - i.getShape().getSize().x/2, i.getBody()->GetPosition().y - i.getShape().getSize().y/2);
 			i.draw(window);
 		}
+	}
+	for (int i = 1; i <= steve.getHP(); i++) {
+		sf::RectangleShape rect(sf::Vector2f(10.f, 20.f));
+		rect.setPosition(steve.getBody()->GetPosition().x - view.getSize().x/2 + 20*i, steve.getBody()->GetPosition().y - view.getSize().y/2 + 20);
+		rect.setFillColor(sf::Color::Cyan);
+		rect.setOutlineThickness(-1);
+		window.draw(rect);
 	}
 }
 
